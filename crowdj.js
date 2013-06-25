@@ -4,7 +4,10 @@ var requestHandlers = require("./requestHandlers");
 
 var handle = {}
 handle["/"] = requestHandlers.start;
+handle["/favicon.ico"] = requestHandlers.favicon;
 handle["/start"] = requestHandlers.start;
 handle["/addLink"] = requestHandlers.addLink;
+handle["/play"] = requestHandlers.play;
 
 server.start(router.route, handle);
+

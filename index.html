@@ -4,12 +4,12 @@
 
 	<body>
 		<h1>crowDJ</h1>
-		<button>Start playing!</button>
-		<button id="add-btn" onclick="toggle('song-form', 'add-btn')">Add song</button>
+		<a href="/play">Start playing!</a>
+		<a href="#" id="add-btn" onclick="toggle('song-form', 'add-btn')">Add song</a>
 
 		<div id="song-form" style="display:none;">
 			<form action="/addLink" method="get">
-				<input type="text" value="URL here" />
+				<input type="text" name="lnk" value="URL here" />
 				<input onclick="toggle('song-form', 'add-btn')" type="submit" value="Add" />
 			</form>
 		</div>
