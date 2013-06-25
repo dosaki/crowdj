@@ -1,0 +1,34 @@
+<html>
+	<head>
+	</head>
+
+	<body>
+		<h1>crowDJ</h1>
+		<button>Start playing!</button>
+		<button id="add-btn" onclick="toggle('song-form', 'add-btn')">Add song</button>
+
+		<div id="song-form" style="display:none;">
+			<form action="/addLink" method="get">
+				<input type="text" value="URL here" />
+				<input onclick="toggle('song-form', 'add-btn')" type="submit" value="Add" />
+			</form>
+		</div>
+
+
+		<script>
+			function toggle(elemId, btnId){
+				var formVisibility = document.getElementById(elemId).style.display;
+
+				if (formVisibility == "none"){
+					document.getElementById(elemId).style.display = "block";
+					document.getElementById(btnId).innerText = "Close"
+				}
+				else if (formVisibility == "block"){
+					document.getElementById(elemId).style.display = "none";
+					document.getElementById(btnId).innerText = "Add song"
+				}
+			}
+		</script>
+	</body>
+
+</html>
