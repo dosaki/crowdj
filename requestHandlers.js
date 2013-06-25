@@ -24,12 +24,11 @@ function addLink(response, getData) {
 		response.write("<h1>Link added successfully!</h1>");
 		var hostname = url.parse(getData.lnk, true).hostname;
 		if(hostname.indexOf("youtube") !== -1){
-				var video = url.parse(getData.lnk, true).query;
-				response.write("<iframe width='420' height='315' src='http://www.youtube.com/embed/" + video.v + "' frameborder='0' allowfullscreen></iframe>");
+			var video = url.parse(getData.lnk, true).query;
+			response.write("<iframe width='420' height='315' src='http://www.youtube.com/embed/" + video.v + "' frameborder='0' allowfullscreen></iframe>");
+
+			exec("echo " + video.v + " >> songList", function (error, stdout, stderr) {});
 		}
-		exec("echo " + getData.lnk + " >> songList", function (error, stdout, stderr) {
-			console.log(stdout);
-		});
 	}
 	else{
 		response.write("Invalid URL: " + getData.lnk);
@@ -44,12 +43,28 @@ function favicon(response) {
 }
 
 function play(response) {
-	var img = fs.readFileSync('./img/icon.jpg');
-	response.writeHead(200, {"Content-Type": "image/x-icon"});
-	response.end(img,'binary');
+	var song = "Nothing here...";
+
+	exec("head -n 1 songList", function (error, stdout, stderr) {
+		song = stdout;
+		var body = fs.readFileSync('./player.html').toString();
+		body = body.replace('videoLinkHere', song);
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.write(body);
+		response.end();
+	});
+}
+
+function next(response) {
+	exec("sed -i -e '1d' songList", function (error, stdout, stderr) {
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.write("<script>window.open('/play','_self')</script>");
+		response.end();
+	});
 }
 
 exports.start = start;
 exports.addLink = addLink;
 exports.favicon = favicon;
 exports.play = play;
+exports.next = next;
