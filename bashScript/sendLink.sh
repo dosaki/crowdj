@@ -1,6 +1,6 @@
 #/bin/bash
 
-hostname="http://localhost:8888"
+hostname="http://anansi.webr.pt:8888"
 
 function encodeURL {
 # urlencode - escaping the reserved characters using URL-encoding
