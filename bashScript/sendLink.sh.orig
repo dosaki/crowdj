@@ -1,5 +1,6 @@
 #/bin/bash
 
+<<<<<<< HEAD
 if [ $# -eq 0 ]
 then
 	echo "Please provide a link.";
@@ -11,6 +12,9 @@ if [ $# -gt 1 ]
 then
 	hostname=$2;
 fi
+=======
+hostname="http://anansi.webr.pt:8888"
+>>>>>>> c4437dce653fa0d250afb15961723bf970d298e4
 
 function encodeURL {
 # urlencode - escaping the reserved characters using URL-encoding
