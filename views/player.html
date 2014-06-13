@@ -1,0 +1,72 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h1>crowDJ</h1>
+
+        <div id="player"></div>
+
+        <input id="videoCrumb" type="hidden" value="videoLinkHere"></input>
+        <div>
+            <a href="/player/next">OH GOD MY EARS! Skip it!</a>
+        </div>
+
+        <div>
+            <a href="#" id="add-btn" onclick="toggle('song-form', 'add-btn')">Add song</a>
+
+            <div id="song-form" style="display:none;">
+                <form action="playlist/addLink" method="get">
+                    URL: <input type="text" name="lnk" value="" />
+                    <input onclick="toggle('song-form', 'add-btn')" type="submit" value="Add" />
+                </form>
+            </div>
+        </div>
+
+        <script src="http://www.youtube.com/player_api"></script>
+        <script>
+            // create youtube player
+            var player;
+            var vidCode = document.getElementById("videoCrumb").value;
+            /*if(vidCode == "")
+                vidCode="pNHlVo0cPa8"*/
+            function onYouTubePlayerAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: vidCode,
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // autoplay video
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // when video ends
+            function onPlayerStateChange(event) {        
+                if(event.data === 0) {          
+                    window.open("/player/next","_self")
+                }
+            }
+
+            function toggle(elemId, btnId){
+                var formVisibility = document.getElementById(elemId).style.display;
+
+                if (formVisibility == "none"){
+                    document.getElementById(elemId).style.display = "block";
+                    document.getElementById(btnId).innerHTML = "Close"
+                }
+                else if (formVisibility == "block"){
+                    document.getElementById(elemId).style.display = "none";
+                    document.getElementById(btnId).innerHTML = "Add song"
+                }
+            }
+        </script>
+    </body>
+
+</html>
