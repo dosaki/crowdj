@@ -13,4 +13,12 @@ Also, this is my first venture into node.js!
 
 
 ###How do you use this?!
-uhm... @todo: explain
+Assuming you have nodejs installed (see [this for linux](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)), all you have to do is:
+
+```shell
+node crowdj.js
+```
+
+And it will start a server on your localhost in port 8888.
+
+The web interface can be accessed through (http://localhost:8888/)[http://localhost:8888/]
