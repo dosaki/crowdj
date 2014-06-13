@@ -10,7 +10,7 @@ handle["/favicon.ico"] = index.favicon;
 handle["/start"] = index.start;
 
 //Playlist Management
-handle["/addLink"] = playlist.addLink;
+handle["/playlist/addLink"] = playlist.addLink;
 
 //Player
 handle["/player"] = player.play;
