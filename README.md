@@ -21,4 +21,4 @@ node crowdj.js
 
 And it will start a server on your localhost in port 8888.
 
-The web interface can be accessed through (http://localhost:8888/)[http://localhost:8888/]
+The web interface can be accessed through [http://localhost:8888/](http://localhost:8888/)
