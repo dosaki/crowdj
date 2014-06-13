@@ -9,7 +9,7 @@
 
 		<input id="videoCrumb" type="hidden" value="videoLinkHere"></input>
 		<div>
-			<a href="/next">OH GOD MY EARS! Skip it!</a>
+			<a href="/player/next">OH GOD MY EARS! Skip it!</a>
 		</div>
 
 		<script src="http://www.youtube.com/player_api"></script>
@@ -39,7 +39,7 @@
 			// when video ends
 			function onPlayerStateChange(event) {        
 				if(event.data === 0) {          
-					window.open("/next","_self")
+					window.open("/player/next","_self")
 				}
 			}
 		</script>
