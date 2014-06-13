@@ -1,6 +1,5 @@
 ##crowdj
 ###- read Crowd-DJ... or however else you want to, I can't really force you
-====
 
 At it's heart, crowdj is a simple playlist that anyone can add to.
 
