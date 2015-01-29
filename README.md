@@ -9,7 +9,7 @@ The problem with this is that you can't really listen to that awesome song you f
 In comes crowdj! I get DJ duty, I fire the application up and now the rest of the dev team doesn't have to always listen to my ~~weird~~ 
 [musical](http://www.youtube.com/watch?v=gvyEqv3iSQ8) [tastes](http://www.youtube.com/watch?v=eN7dYDYfvVg)!
 
-Also, this is my first venture into node.js!
+Also, this is my first venture into node.js! (just wanted to try it out, really)
 
 
 ###How do you use this?!
