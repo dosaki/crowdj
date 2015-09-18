@@ -12,7 +12,7 @@ In comes crowdj! I get DJ duty, I fire the application up and now the rest of th
 Also, this is my first venture into node.js! (just wanted to try it out, really)
 
 
-###How do you use this?!
+###How do you use this?
 Assuming you have nodejs installed (see [this for linux](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)), all you have to do is:
 
 ```shell
